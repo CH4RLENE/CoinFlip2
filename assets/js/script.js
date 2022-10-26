@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (result <= 50) { //heads
             numberHeads ++
             console.log("numberHeads", numberHeads)
-            image.src = `C:\Users\charl\FSI-Implement-Coin-Flipper\assets\images\penny-heads.jpg`; //fix image ref
+            image.src = "/Users/charl/FSI-Implement-Coin-Flipper/assets/images/penny-heads.jpg";
             message.textContent = "You Flipped Heads!";
         } else if (result > 50) { //tails
             numberTails ++
             console.log("numberTails", numberTails)
-            image.src = "C:\Users\charl\FSI-Implement-Coin-Flipper\assets\images\penny-tails.jpg";
+            image.src = "/Users/charl/FSI-Implement-Coin-Flipper/assets/images/penny-tails.jpg";
             message.textContent = "You Flipped Tails!";
         }
         percentHeads = (numberHeads/totalFlips) * 100
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // TODO: Reset global variables to 0
         // TODO: Update the scoreboard (same logic as in flip button click handler)
     clearButton.addEventListener("click", function(e) {
-        image.src = "C:\Users\charl\FSI-Implement-Coin-Flipper\assets\images\penny-heads.jpg";
+        image.src = "/Users/charl/FSI-Implement-Coin-Flipper/assets/images/penny-heads.jpg";
         message.textContent = "Let's Get Rolling"
         numberHeads = 0
         numberTails = 0
