@@ -1,5 +1,18 @@
 // TODO: Declare any global variables we need
-
+let numberHeads = 0;
+let numberTails = 0;
+let percentHeads = 0;
+let percentTails = 0;
+let result = 0;
+let totalFlips = 0;
+let image = document.querySelector("img")
+let message = document.querySelector("#result") //getElementbyId("result")
+let flipButton = document.querySelector("#flip")
+let headsArea = document.querySelector("#heads")
+let headsPercentArea = document.querySelector("#heads-percent")
+let tailsArea = document.querySelector("#tails")
+let tailsPercentArea = document.querySelector("#tails-percent")
+let clearButton = document.querySelector("#clear")
 
 document.addEventListener('DOMContentLoaded', function () {
     // This is just a sanity check to make sure your JavaScript script is getting loaded
@@ -9,19 +22,50 @@ document.addEventListener('DOMContentLoaded', function () {
     // TODO: Add event listener and handler for flip and clear buttons
 
     // Flip Button Click Handler
+    flipButton.addEventListener("click", function(e) {
+    //TODO: calculate the total number of rolls/flips
+        totalFlips ++
+
         // TODO: Determine flip outcome
+        let result = Math.round(Math.random() * 100);
+        //deide the range for both heads and tails
+        //let heads 0 - 50
+        //let tails 51 - 99
+        console.log(result);
+
         // TODO: Update image and status message in the DOM
+        if (result <= 50) { //heads
+            numberHeads ++
+            console.log("numberHeads", numberHeads)
+            image.src = `C:\Users\charl\FSI-Implement-Coin-Flipper\assets\images\penny-heads.jpg`; //fix image ref
+            message.textContent = "You Flipped Heads!";
+        } else if (result > 50) { //tails
+            numberTails ++
+            console.log("numberTails", numberTails)
+            image.src = "C:\Users\charl\FSI-Implement-Coin-Flipper\assets\images\penny-tails.jpg";
+            message.textContent = "You Flipped Tails!";
+        }
+        percentHeads = (numberHeads/totalFlips) * 100
+        percentTails = (numberTails/totalFlips) * 100
+        console.log("percentHeads", percentHeads)
+        console.log("percentTails", percentTails)
 
-        // Update the scorboard
-        // TODO: Calculate the total number of rolls/flips
-        // Make variables to track the percentages of heads and tails
-        // TODO: Use the calculated total to calculate the percentages
-        // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
-        // TODO: Update the display of each table cell
-
+        headsArea.textContent = `${numberHeads}`
+        headsPercentArea = `{$percentHeads}%`
+        tailsArea.textContent = `${numberTails}`
+        tailsPercentArea = `{$percentTails}%`
+    })
 
     // Clear Button Click Handler
         // TODO: Reset global variables to 0
         // TODO: Update the scoreboard (same logic as in flip button click handler)
-
+    clearButton.addEventListener("click", function(e) {
+        image.src = "C:\Users\charl\FSI-Implement-Coin-Flipper\assets\images\penny-heads.jpg";
+        message.textContent = "Let's Get Rolling"
+        numberHeads = 0
+        numberTails = 0
+        percentHeads = 0
+        percentTails = 0
+        totalFlips = 0
+    })
 })
