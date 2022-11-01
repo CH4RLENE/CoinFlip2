@@ -47,8 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         percentHeads = (numberHeads/totalFlips) * 100
         percentTails = (numberTails/totalFlips) * 100
-        console.log("percentHeads", percentHeads)
-        console.log("percentTails", percentTails)
+    
 
         headsArea.textContent = `${numberHeads}`
         headsPercentArea = `{$percentHeads}%`
