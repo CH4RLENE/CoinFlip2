@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (result <= 50) { //heads
             numberHeads ++
             console.log("numberHeads", numberHeads)
-            image.src = "/Users/charl/FSI-Implement-Coin-Flipper/assets/images/penny-heads.jpg";
+            image.src = `assets/images/penny-heads.jpg`;
             message.textContent = "You Flipped Heads!";
         } else if (result > 50) { //tails
             numberTails ++
             console.log("numberTails", numberTails)
-            image.src = "/Users/charl/FSI-Implement-Coin-Flipper/assets/images/penny-tails.jpg";
+            image.src = `assets/images/penny-tails.jpg`
             message.textContent = "You Flipped Tails!";
         }
         percentHeads = (numberHeads/totalFlips) * 100
